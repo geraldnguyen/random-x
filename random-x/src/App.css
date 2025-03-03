@@ -73,3 +73,12 @@ pre {
   padding: 10px;
   border: 1px solid #ddd;
 }
+
+.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
