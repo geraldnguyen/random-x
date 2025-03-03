@@ -176,6 +176,12 @@ Integrate all the previous steps into a cohesive application. Ensure that:
 *   The clear button resets all state values and clears any error messages. Test the integration by simulating typical user interactions to ensure that all components work together seamlessly.
 
 
+**Extra**
+- Add a "Refresh" button so that user can re-randomize the sublist
+- Display the number corresponding to the value of the slider
+
+
+
 ---
 
 ### Prompt 7: Styling and Responsive Design
