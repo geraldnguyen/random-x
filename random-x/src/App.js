@@ -45,10 +45,21 @@ function App() {
     return '';
   };
 
+  const generateRandomSublist = (names, size) => {
+    const nameList = names.split('\n').filter(Boolean);
+    const shuffled = nameList.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, size);
+  };
+
   useEffect(() => {
     const nameError = validateNames(names);
     const sizeError = validateSublistSize(sublistSize, names);
     setErrors({ names: nameError, sublistSize: sizeError });
+
+    if (!nameError && !sizeError) {
+      const randomSublist = generateRandomSublist(names, sublistSize);
+      setOutput(randomSublist);
+    }
   }, [names, sublistSize]);
 
   return (
