@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import FileUpload from './components/FileUpload';
 
 function App() {
   const [names, setNames] = useState('');
@@ -7,13 +8,14 @@ function App() {
   const [output, setOutput] = useState([]);
   const [errors, setErrors] = useState({ names: '', sublistSize: '' });
 
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      setNames(e.target.result);
-    };
-    reader.readAsText(file);
+  const handleFileUpload = (fileContent) => {
+    if (names) {
+      if (window.confirm('Existing names will be replaced. Do you want to continue?')) {
+        setNames(fileContent);
+      }
+    } else {
+      setNames(fileContent);
+    }
   };
 
   const handleClear = () => {
@@ -63,7 +65,7 @@ function App() {
             className={errors.names ? 'error' : ''}
           />
           {errors.names && <div className="error-message">{errors.names}</div>}
-          <input type="file" onChange={handleFileUpload} />
+          <FileUpload onFileUpload={handleFileUpload} />
           <input
             type="range"
             min="1"
