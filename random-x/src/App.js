@@ -12,10 +12,6 @@ function App() {
     setRandomSublist(shuffled.slice(0, sublistSize));
   };
 
-  const handleRefresh = () => {
-    handleRandomize();
-  };
-
   return (
     <div className="App container">
       <header className="App-header">
@@ -25,6 +21,7 @@ function App() {
         <div className="input-section">
           <textarea
             className="form-control"
+            value={names.join('\n')}
             onChange={(e) => setNames(e.target.value.split('\n'))}
             placeholder="Enter names, one per line"
           />
@@ -35,7 +32,8 @@ function App() {
               const file = e.target.files[0];
               const reader = new FileReader();
               reader.onload = (event) => {
-                setNames(event.target.result.split('\n'));
+                const fileContent = event.target.result;
+                setNames(fileContent.split('\n'));
               };
               reader.readAsText(file);
             }}
@@ -52,7 +50,6 @@ function App() {
             <span>{sublistSize}</span>
           </div>
           <button className="btn btn-primary me-2" onClick={handleRandomize}>Generate Random Sublist</button>
-          <button className="btn btn-secondary" onClick={handleRefresh}>Refresh</button>
         </div>
         <div className="output-section">
           <h2>Random Sublist</h2>

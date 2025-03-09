@@ -246,3 +246,12 @@ For the final step, focus on testing and documentation. Complete the following:
 By following this checklist, you'll be able to develop the Web UI tool incrementally and methodically. Each prompt is designed to be small enough for safe implementation and testing, while ensuring every component integrates seamlessly into the final application. Use this `todo.md` file as your roadmap throughout the project.
 
 Happy coding!
+
+
+## BUGS & Adjustment
+
+1. Bug: Nothing happens after select a file. The content of the file should be populated to the main text area.
+
+The value of the text are should be synced with the list of names.
+
+2. Remove the Refresh button
