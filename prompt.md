@@ -206,6 +206,8 @@ Enhance the user interface with modern, responsive styling. Your task is to:
 *   Update the UI components if necessary so that they align properly on the page. Wire the styles into the project so that the enhanced UI is reflected immediately.
 
 
+**NOTE**: This prompt, resume after a long hiatus, does not work after so many tries. The context was lost, Copilot kept generating App.tsx file despite the project was setup with vanila JS. It was only after 5 or 6 attempts with Claud and GPT that it finally worked recommending bootstrap on app.js
+
 
 ---
 

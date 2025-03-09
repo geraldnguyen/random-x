@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
@@ -16,17 +17,19 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App container">
       <header className="App-header">
         <h1>Random Sublist Generator</h1>
       </header>
       <main>
         <div className="input-section">
           <textarea
+            className="form-control"
             onChange={(e) => setNames(e.target.value.split('\n'))}
             placeholder="Enter names, one per line"
           />
           <input
+            className="form-control"
             type="file"
             onChange={(e) => {
               const file = e.target.files[0];
@@ -37,8 +40,9 @@ function App() {
               reader.readAsText(file);
             }}
           />
-          <div>
+          <div className="my-3">
             <input
+              className="form-range"
               type="range"
               min="1"
               max={names.length}
@@ -47,14 +51,14 @@ function App() {
             />
             <span>{sublistSize}</span>
           </div>
-          <button onClick={handleRandomize}>Generate Random Sublist</button>
-          <button onClick={handleRefresh}>Refresh</button>
+          <button className="btn btn-primary me-2" onClick={handleRandomize}>Generate Random Sublist</button>
+          <button className="btn btn-secondary" onClick={handleRefresh}>Refresh</button>
         </div>
         <div className="output-section">
           <h2>Random Sublist</h2>
-          <ul>
+          <ul className="list-group">
             {randomSublist.map((name, index) => (
-              <li key={index}>{name}</li>
+              <li className="list-group-item" key={index}>{name}</li>
             ))}
           </ul>
         </div>
