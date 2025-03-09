@@ -67,18 +67,6 @@ function App() {
             type="file"
             onChange={handleFileChange}
           />
-          <div className="my-3">
-            <input
-              className="form-range"
-              type="range"
-              min="1"
-              max={checkedNamesCount}
-              value={sublistSize}
-              onChange={(e) => setSublistSize(Number(e.target.value))}
-            />
-            <span>{sublistSize}</span>
-          </div>
-          <button className="btn btn-primary me-2" onClick={handleRandomize}>Generate Random Sublist</button>
         </div>
         <div className="output-section">
           <h2>Names</h2>
@@ -94,6 +82,18 @@ function App() {
               </li>
             ))}
           </ul>
+          <div className="my-3">
+            <input
+              className="form-range"
+              type="range"
+              min="1"
+              max={checkedNamesCount}
+              value={sublistSize}
+              onChange={(e) => setSublistSize(Number(e.target.value))}
+            />
+            <span>{sublistSize}</span>
+          </div>
+          <button className="btn btn-primary me-2" onClick={handleRandomize}>Generate Random Sublist</button>
           <h2>Random Sublist</h2>
           <ul className="list-group">
             {randomSublist.map((name, index) => (

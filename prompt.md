@@ -255,3 +255,7 @@ Happy coding!
 The value of the text are should be synced with the list of names.
 
 2. Remove the Refresh button
+
+3. Below the text area and file uploader, display a checkbox to the left of each name from the text area, default to checked. If a name is checked, it is included in the input list for the random function and the slider size.
+
+4. Move the slider, random size field and the generate button to below the displayed names.
